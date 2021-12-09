@@ -16,11 +16,11 @@ const App = () => {
     {id: "1", content: "Read a book", complete: false },
     {id: "2", content: "Do sport", complete: false },
     {id: "3", content: "Go to cinema", complete: false },
-  ]);
+]);
 
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
-     prevTodos.filter(item => item.id != key);
+     prevTodos(todos.filter(item => item.id != key));
     }); 
   };
 
@@ -41,7 +41,7 @@ const App = () => {
         <Header count={counter} />
         <FlatList
           data={todos}
-          keyExtractor={todos.key}
+          keyExtractor={todos.id}
           renderItem={({ item }) => <Card pressHandler={pressHandler} item={item} />}
         />
         <Button submitHandler={submitHandler} />
