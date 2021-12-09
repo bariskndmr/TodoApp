@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   SafeAreaView,
@@ -18,11 +18,17 @@ const App = () => {
     {id: "3", content: "Go to cinema", complete: false },
 ]);
 
+
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
      prevTodos(todos.filter(item => item.id != key));
     }); 
   };
+
+  useEffect(() => {
+    const length = todos.length;
+    setCounter(length);
+  },[todos])
 
   const submitHandler = (text) => {
     setTodos((prevTodos) => {
