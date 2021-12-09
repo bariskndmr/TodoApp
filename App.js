@@ -33,7 +33,7 @@ const App = () => {
   const submitHandler = (text) => {
     setTodos((prevTodos) => {
       return [
-        {key: Math.random().toString(), content:text},
+        {id: Math.random().toString(), content:text},
         ...prevTodos
       ];
     })
