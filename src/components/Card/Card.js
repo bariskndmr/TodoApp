@@ -4,7 +4,7 @@ import Styles from './Card.style';
 
 const Card = ({item, pressHandler}) => {
     return (
-        <TouchableOpacity onPress={() => pressHandler=(item.id)} style={Styles.card}>
+        <TouchableOpacity onPress={() => pressHandler(item.id)} style={Styles.card}>
         <Text style={Styles.text}>{item.content}</Text>
         </TouchableOpacity>
     )
