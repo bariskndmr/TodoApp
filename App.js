@@ -21,7 +21,7 @@ const App = () => {
 
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
-     prevTodos(todos.filter(item => item.id != key));
+     return prevTodos.filter((item) => item.id != key);
     }); 
   };
 
