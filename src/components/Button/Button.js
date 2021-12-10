@@ -4,16 +4,9 @@ import Styles from './Button.style';
 
 export default Button = ({submitHandler}) => {
     const [text, setText] = useState('');
-
-    onEnterText = (val) => {
-        setText(val);
-    }
-
-    
-
     return (
         <View style={Styles.container}>
-            <TextInput style={Styles.input} onChangeText={onEnterText} placeholder="Todo..." placeholderTextColor="white" />
+            <TextInput style={Styles.input} onChangeText={setText} placeholder="Todo..." placeholderTextColor="white" />
             <TouchableOpacity
             disabled={(!text  ?  true : false )} 
             style={[Styles.button, { backgroundColor: text ? '#ffa500' : '#808080' }]}
