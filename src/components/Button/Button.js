@@ -6,11 +6,14 @@ export default Button = ({submitHandler}) => {
     const [text, setText] = useState('');
     return (
         <View style={Styles.container}>
-            <TextInput style={Styles.input} onChangeText={setText} placeholder="Todo..." placeholderTextColor="white" />
+            <TextInput value={text} style={Styles.input} onChangeText={setText} placeholder="Todo..." placeholderTextColor="white" />
             <TouchableOpacity
             disabled={(!text  ?  true : false )} 
             style={[Styles.button, { backgroundColor: text ? '#ffa500' : '#808080' }]}
-            onPress={() => submitHandler(text)}
+            onPress={() => {
+                submitHandler(text),
+                setText('')
+            }}
             >
                 <Text style={Styles.text}>Add</Text>
             </TouchableOpacity>
